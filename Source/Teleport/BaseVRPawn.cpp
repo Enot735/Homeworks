@@ -29,31 +29,4 @@ void ABaseVRPawn::Tick(float DeltaTime)
 void ABaseVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	InputComponent->BindAction("ChangeLeftColor", IE_Pressed, this, &ABaseVRPawn::ChangeLeftColor);
-	InputComponent->BindAction("ChangeLeftColor", IE_Released, this, &ABaseVRPawn::NotChangeLeftColor);
-
-	InputComponent->BindAction("ChangeRightColor", IE_Pressed, this, &ABaseVRPawn::ChangeRightColor);
-	InputComponent->BindAction("ChangeRightColor", IE_Released, this, &ABaseVRPawn::NotChangeRightColor);
-
-}
-
-void ABaseVRPawn::ChangeLeftColor()
-{
-	bIsChangeLeftColor = true;
-}
-
-void ABaseVRPawn::NotChangeLeftColor()
-{
-	bIsChangeLeftColor = false;
-}
-
-void ABaseVRPawn::ChangeRightColor()
-{
-	bIsChangeRightColor = true;
-}
-
-void ABaseVRPawn::NotChangeRightColor()
-{
-	bIsChangeRightColor = false;
-}
+	}

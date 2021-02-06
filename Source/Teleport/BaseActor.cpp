@@ -10,8 +10,7 @@ ABaseActor::ABaseActor()
 	PrimaryActorTick.bCanEverTick = true;
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
-	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-	StaticMeshComponent->AttachTo(RootComponent);
+	StaticMeshComponent->AttachTo(CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent")));
 
 }
 
@@ -28,6 +27,8 @@ void ABaseActor::BeginPlay()
 void ABaseActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	StaticMeshComponent->AddRelativeRotation(FRotator(0.f, 0.f, 1.f));
 
 	if (CurrentColor & (uint8)EColors::Red + 1)
 	{
