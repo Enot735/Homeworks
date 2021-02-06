@@ -5,9 +5,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Engine/StaticMesh.h"
-#include "Components/StaticMeshComponent.h"
-#include "UObject/ConstructorHelpers.h"
-#include "ClickInterface.h"
 #include "BaseActor.generated.h"
 
 UENUM()
@@ -18,7 +15,7 @@ enum class EColors : uint8
 	Blue = 0x02,
 };
 
-UCLASS(Abstract)
+UCLASS()
 class TELEPORT_API ABaseActor : public AActor
 {
 	GENERATED_BODY()

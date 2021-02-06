@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class TELEPORT_API AClickBaseActor : public ABaseActor, public IClickInterface
+class TELEPORT_API AClickBaseActor : public ABaseActor
 {
 	GENERATED_BODY()
 
