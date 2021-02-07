@@ -20,7 +20,6 @@ void ABaseActor::BeginPlay()
 	Super::BeginPlay();
 
 	Color = FVector(1.0f, 0.0f, 0.0f);
-
 }
 
 // Called every frame

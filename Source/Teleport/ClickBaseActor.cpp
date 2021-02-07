@@ -12,7 +12,6 @@ AClickBaseActor::AClickBaseActor()
 void AClickBaseActor::ClickActor()
 {
     StaticMeshComponent->SetVectorParameterValueOnMaterials(FName("Color"), ChangeColor());
-
 }
 
 // Called when the game starts or when spawned
