@@ -7,6 +7,7 @@
 #include "Engine/StaticMesh.h"
 #include "UObject/ConstructorHelpers.h"
 #include "ClickInterface.h"
+#include "UObject/ConstructorHelpers.h"
 #include "BaseActor.generated.h"
 
 UENUM()
@@ -41,10 +42,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = Color, Meta = (ClampMin = "0.0", ClampMax = "1.0"))
 		float Blue;
 
-	UPROPERTY(BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		FVector Color;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION()
 		FVector ChangeColor();
 
 protected:

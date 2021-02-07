@@ -4,18 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "ClickBaseActor.h"
-#include "ConeClickBaseActor.generated.h"
+#include "SphereClickBaseActor.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class TELEPORT_API AConeClickBaseActor : public AClickBaseActor
+class TELEPORT_API ASphereClickBaseActor : public AClickBaseActor
 {
 	GENERATED_BODY()
-
+	
 public:
-	AConeClickBaseActor();
+	ASphereClickBaseActor();
 
 protected:
 	// Called when the game starts or when spawned
