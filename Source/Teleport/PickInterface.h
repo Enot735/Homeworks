@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "UObject/Interface.h"
-#include "ClickInterface.generated.h"
+#include "PickInterface.generated.h"
 
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI, BlueprintType)
-class UClickInterface : public UInterface
+class UPickInterface : public UInterface
 {
 	GENERATED_BODY()
 };
@@ -16,13 +16,12 @@ class UClickInterface : public UInterface
 /**
  * 
  */
-class TELEPORT_API IClickInterface
+class TELEPORT_API IPickInterface
 {
 	GENERATED_BODY()
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = ClickCheck)
-		void Click();
-
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = PickCheck)
+		void Pick();
 };
