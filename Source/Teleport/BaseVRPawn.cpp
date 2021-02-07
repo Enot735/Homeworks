@@ -29,4 +29,4 @@ void ABaseVRPawn::Tick(float DeltaTime)
 void ABaseVRPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	}
+}
