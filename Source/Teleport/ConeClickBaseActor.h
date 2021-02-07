@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ClickBaseActor.h"
+#include "PhysicalMaterials/PhysicalMaterial.h"
 #include "ConeClickBaseActor.generated.h"
 
 /**
@@ -16,6 +17,10 @@ class TELEPORT_API AConeClickBaseActor : public AClickBaseActor
 
 public:
 	AConeClickBaseActor();
+
+	UMaterial* MeshMaterial;
+
+	UMaterialInstanceDynamic* MaterialInstDynamic;
 
 protected:
 	// Called when the game starts or when spawned

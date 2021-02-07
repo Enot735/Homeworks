@@ -16,12 +16,18 @@ ABaseActor::ABaseActor()
 
 }
 
+FVector ABaseActor::ChangeColor()
+{
+	Color = FVector(FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f));
+	return Color;
+}
+
 // Called when the game starts or when spawned
 void ABaseActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Color = FVector(1.0f, 0.0f, 0.0f);
+	Color = ChangeColor();
 }
 
 // Called every frame
@@ -48,10 +54,4 @@ void ABaseActor::Tick(float DeltaTime)
 	
 	StaticMeshComponent->SetVectorParameterValueOnMaterials(FName("Color"), Color);
 
-}
-
-FVector ABaseActor::ChangeColor()
-{
-	Color = FVector(FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f), FMath::RandRange(0.0f, 1.0f));
-	return Color;
 }

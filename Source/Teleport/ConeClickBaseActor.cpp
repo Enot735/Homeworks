@@ -11,12 +11,19 @@ AConeClickBaseActor::AConeClickBaseActor()
     static ConstructorHelpers::FObjectFinder<UStaticMesh>ConeMesh(TEXT("StaticMesh'/Engine/BasicShapes/Cone.Cone'"));
     StaticMeshComponent->SetStaticMesh(ConeMesh.Object);
 
+    static ConstructorHelpers::FObjectFinder<UMaterial>Material(TEXT("Material'/Engine/BasicShapes/BasicShapeMaterial'"));
+    MeshMaterial = Material.Object;
+    StaticMeshComponent->SetMaterial(0, MeshMaterial);
+
 }
 
 // Called when the game starts or when spawned
 void AConeClickBaseActor::BeginPlay()
 {
     Super::BeginPlay();
+
+    MaterialInstDynamic = UMaterialInstanceDynamic::Create(MeshMaterial, StaticMeshComponent);
+    StaticMeshComponent->SetMaterial(0, MaterialInstDynamic);
 }
 
 // Called every frame
