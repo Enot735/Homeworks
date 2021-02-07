@@ -11,12 +11,18 @@ ASphereClickBaseActor::ASphereClickBaseActor()
     static ConstructorHelpers::FObjectFinder<UStaticMesh>SphereMesh(TEXT("StaticMesh'/Engine/BasicShapes/Sphere.Sphere'"));
     StaticMeshComponent->SetStaticMesh(SphereMesh.Object);
 
+    static ConstructorHelpers::FObjectFinder<UMaterial>Material(TEXT("Material'/Engine/BasicShapes/BasicShapeMaterial'"));
+    MeshMaterial = Material.Object;
+    StaticMeshComponent->SetMaterial(0, MeshMaterial);
 }
 
 // Called when the game starts or when spawned
 void ASphereClickBaseActor::BeginPlay()
 {
     Super::BeginPlay();
+
+    MaterialInstDynamic = UMaterialInstanceDynamic::Create(MeshMaterial, StaticMeshComponent);
+    StaticMeshComponent->SetMaterial(0, MaterialInstDynamic);
 }
 
 // Called every frame

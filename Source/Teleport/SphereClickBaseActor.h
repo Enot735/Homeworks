@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ClickBaseActor.h"
+#include "PhysicalMaterials/PhysicalMaterial.h"
 #include "SphereClickBaseActor.generated.h"
 
 /**
@@ -20,6 +21,10 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UMaterial* MeshMaterial;
+
+	UMaterialInstanceDynamic* MaterialInstDynamic;
 
 public:
 	// Called every frame
