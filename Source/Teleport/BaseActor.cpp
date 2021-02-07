@@ -12,6 +12,8 @@ ABaseActor::ABaseActor()
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
 	StaticMeshComponent->AttachTo(CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent")));
 
+	StaticMeshComponent->SetSimulatePhysics(true);
+
 }
 
 // Called when the game starts or when spawned
@@ -27,7 +29,7 @@ void ABaseActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	StaticMeshComponent->AddRelativeRotation(FRotator(0.f, 0.f, 1.f));
+	// StaticMeshComponent->AddRelativeRotation(FRotator(0.f, 0.f, 1.f));
 
 	if (CurrentColor & (uint8)EColors::Red + 1)
 	{
