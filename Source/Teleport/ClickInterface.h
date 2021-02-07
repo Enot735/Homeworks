@@ -24,4 +24,5 @@ class TELEPORT_API IClickInterface
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = ClickCheck)
 		void Click();
+
 };
