@@ -1,26 +1,26 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "ConeClickBaseActor.h"
+#include "SphereClickBaseActor.h"
 
-AConeClickBaseActor::AConeClickBaseActor()
+ASphereClickBaseActor::ASphereClickBaseActor()
 {
     // Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
     PrimaryActorTick.bCanEverTick = true;
 
-    static ConstructorHelpers::FObjectFinder<UStaticMesh>ConeMesh(TEXT("StaticMesh'/Engine/BasicShapes/Cone.Cone'"));
-    StaticMeshComponent->SetStaticMesh(ConeMesh.Object);
+    static ConstructorHelpers::FObjectFinder<UStaticMesh>SphereMesh(TEXT("StaticMesh'/Engine/BasicShapes/Sphere.Sphere'"));
+    StaticMeshComponent->SetStaticMesh(SphereMesh.Object);
 
 }
 
 // Called when the game starts or when spawned
-void AConeClickBaseActor::BeginPlay()
+void ASphereClickBaseActor::BeginPlay()
 {
     Super::BeginPlay();
 }
 
 // Called every frame
-void AConeClickBaseActor::Tick(float DeltaTime)
+void ASphereClickBaseActor::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 }
